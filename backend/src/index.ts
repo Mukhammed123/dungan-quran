@@ -1,11 +1,12 @@
 const { Client } = require("pg");
+require('dotenv').config();
 
 const client = new Client({
-    host: "localhost",
-    port: 5431,
-    user: "postgres",
-    password: "mukhammed123",
-    database: "quran_dungan"
+    host: process.env.HOST,
+    port: process.env.PORT,
+    user: process.env.USER,
+    password: process.env.PASSWORD,
+    database: process.env.DATABASE
 });
 
 client.connect((err: Error) => {
@@ -13,4 +14,5 @@ client.connect((err: Error) => {
     else console.log("Connected Successfully!!!");
 })
 
-console.log("Hello World")
+console.log("Hello, ", process.env.USER);
+console.log("Hello, ", process.env.PASSWORD);
