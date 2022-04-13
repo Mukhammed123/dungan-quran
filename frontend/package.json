@@ -12,6 +12,7 @@
     "@fast-csv/format": "^4.3.5",
     "@fast-csv/parse": "^4.3.6",
     "fast-csv": "^4.3.6",
+    "pdfreader": "^1.4.0",
     "pinia": "^2.0.13",
     "vue": "^3.2.31",
     "vue-router": "^4.0.14"
