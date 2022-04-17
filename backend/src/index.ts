@@ -1,18 +1,19 @@
-const { Client } = require("pg");
 require('dotenv').config();
+const express = require("express");
+const cors = require("cors");
 
-const client = new Client({
-    host: process.env.HOST,
-    port: process.env.PORT,
-    user: process.env.USER,
-    password: process.env.PASSWORD,
-    database: process.env.DATABASE
-});
 
-client.connect((err: Error) => {
-    if (err) console.log(err.stack);
-    else console.log("Connected Successfully!!!");
+const app = express();
+
+app.use(express.json());
+app.use(cors());
+app.use('/api/surah', require('./routes/surah'));
+
+const PORT = 5001;
+
+
+
+
+app.listen(PORT, () => {
+    console.log(`Server is listening on port ${PORT}`);
 })
-
-console.log("Hello, ", process.env.USER);
-console.log("Hello, ", process.env.PASSWORD);
