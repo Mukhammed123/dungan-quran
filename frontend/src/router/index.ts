@@ -1,5 +1,7 @@
+import SurahDetailsVue from "@/views/SurahDetails.vue";
 import { createRouter, createWebHistory } from "vue-router";
-import HomeView from "../views/HomeView.vue";
+import HomeView from "@/views/HomeView.vue";
+import SurahDetails from "@/views/SurahDetails.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -8,6 +10,11 @@ const router = createRouter({
       path: "/",
       name: "home",
       component: HomeView,
+    },
+    {
+      path: "/surah-:id",
+      name: "surah-details",
+      component: SurahDetails
     },
     {
       path: "/about",
