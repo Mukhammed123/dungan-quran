@@ -15,6 +15,6 @@ import { RouterLink, RouterView } from "vue-router";
 @import "@/assets/base.css";
 .nav-bar {
   padding: 1em 0;
-  background-color: gray;
+  background-color: rgb(228, 228, 228);
 }
 </style>

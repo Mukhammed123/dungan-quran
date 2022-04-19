@@ -1,8 +1,10 @@
 <template>
   <main>
     <div>
-      <div class="position-relative d-flex justify-content-center align-items-center">
-        <img src="@/assets/quran.jpeg" class="img-fluid" alt="quran" />
+      <div
+        class="position-relative d-flex justify-content-center align-items-center"
+      >
+        <img src="@/assets/quran.png" class="img-fluid" alt="quran" />
         <div class="input-group input-group-lg position-absolute">
           <span class="input-group-text" id="inputGroup-sizing-lg">Search</span>
           <input
@@ -46,10 +48,13 @@ export default {
     });
 
     const searchNames = () => {
-      filteredData.value = names.value.filter(
-        (name) =>
-          name.surah_rus.includes(search.value) || name.surah_num.includes(search.value)
-      );
+      filteredData.value = names.value.filter((name) => {
+        const upperCaseName = name.surah_rus.toUpperCase();
+        return (
+          upperCaseName.includes(search.value.toUpperCase()) ||
+          name.surah_num.includes(search.value)
+        );
+      });
     };
     return {
       filteredData,
